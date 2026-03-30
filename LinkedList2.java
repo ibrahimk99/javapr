@@ -106,14 +106,7 @@ public class LinkedList2 {
       return head;
     }
     // Find Mid
-    Node slow = head;
-    Node fast = head.next;
-    while (fast != null && fast.next != null) {
-      slow = slow.next;
-      fast = fast.next.next;
-    }
-
-    Node mid = slow;
+    Node mid = getMid(head);
     // Left & Right MS
     Node rightHead = mid.next;
     mid.next = null;
@@ -191,8 +184,8 @@ public class LinkedList2 {
     ll.addFirst(5);
     ll.addFirst(6);
 
-    // ll.print();
-    // ll.head = ll.mergeSort(ll.head);
+    ll.print();
+    ll.head = ll.mergeSort(ll.head);
     ll.zigZag();
     ll.print();
     // mergeSort(head);
